@@ -19,8 +19,7 @@ def aktualna_prognoza():
                         "Smjer vjetra" : grad["Podatci"]["VjetarSmjer"],
                         "Brzina vjetra" : grad["Podatci"]["VjetarBrzina"],
                         "Vrijeme": grad["Podatci"]["Vrijeme"],
-                        "Datum": datetime.now().timestamp()
-                        #"Datum": datetime.now().strftime("%d. %m. %Y. %H:%M:%S")
+                        "Datum": datetime.now().strftime("%d. %m. %Y. %H:%M:%S")
                         } for grad in prognoza["Hrvatska"]["Grad"]
                 }
     except Exception as e:
