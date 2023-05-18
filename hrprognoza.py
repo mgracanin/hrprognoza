@@ -8,7 +8,7 @@ def aktualna_prognoza():
     Vraća riječnik oblika {Grad: {Temperatura, Vlaga, Tlak, Smjer vjetra, Brzina vjetra, Vrijeme},...}
     '''
     try:
-        url_prognoza = "https://vrijeme.hr/hrvatska1_n.xmla"
+        url_prognoza = "https://vrijeme.hr/hrvatska1_n.xml"
         prognoza = xmltodict.parse(requests.get(url=url_prognoza).content) ## preuzimamo i konvertiramo XML u dict
 
         return { ## vraćamo rječnik s podacima
@@ -37,3 +37,5 @@ if __name__ == "__main__":
 
         lista_gradova = list(aktualna_prognoza().keys())
         print(lista_gradova)
+
+        print(f"Zagreb: {aktualna_prognoza()['Zagreb-Maksimir']}")
